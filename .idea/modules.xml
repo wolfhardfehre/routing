@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nominatim_main.iml" filepath="$PROJECT_DIR$/.idea/modules/nominatim_main.iml" group="nominatim" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nominatim_test.iml" filepath="$PROJECT_DIR$/.idea/modules/nominatim_test.iml" group="nominatim" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/router.iml" filepath="$PROJECT_DIR$/.idea/modules/router.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/router_main.iml" filepath="$PROJECT_DIR$/.idea/modules/router_main.iml" group="router" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/router_test.iml" filepath="$PROJECT_DIR$/.idea/modules/router_test.iml" group="router" />
+    </modules>
+  </component>
+</project>
