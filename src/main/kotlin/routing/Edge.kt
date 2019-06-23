@@ -1,6 +1,6 @@
 package routing
 
-data class Edge(private val id: String,
+data class Edge(val id: String,
                 val start: Vertex,
                 val end: Vertex,
                 val weight: Int) {

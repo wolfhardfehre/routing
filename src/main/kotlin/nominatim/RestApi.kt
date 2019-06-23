@@ -1,8 +1,8 @@
 package nominatim
 
+import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -17,9 +17,13 @@ class RestApi {
         api = retrofit.create(NominatimApi::class.java)
     }
 
-    fun getPlace(city: String): Call<List<Place>> = api.search(city, format, limit)
+    fun getPlace(city: String): List<Place> = runBlocking {
+                return@runBlocking api.search(city, format, limit)
+            }
 
-    fun getPlace(lat: Double, lon: Double): Call<List<Place>> = api.reverse(lat, lon, format)
+    fun getPlace(lat: Double, lon: Double): List<Place> = runBlocking {
+                return@runBlocking api.reverse(lat, lon, format)
+            }
 
     private fun retrofit(): Retrofit = Retrofit.Builder()
             .baseUrl("http://nominatim.openstreetmap.org")
@@ -28,9 +32,9 @@ class RestApi {
             .build()
 
     private fun client(): OkHttpClient = OkHttpClient.Builder()
-            //.addInterceptor(logging())
+            .addInterceptor(logging())
             .build()
 
     private fun logging(): HttpLoggingInterceptor = HttpLoggingInterceptor()
-            .setLevel(HttpLoggingInterceptor.Level.BODY)
+            .setLevel(HttpLoggingInterceptor.Level.NONE)
 }

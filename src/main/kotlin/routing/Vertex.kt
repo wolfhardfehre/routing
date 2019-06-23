@@ -1,6 +1,6 @@
 package routing
 
-data class Vertex(private val id: String,
+data class Vertex(val id: String,
                   val name: String,
                   val x: Double,
                   val y: Double) {
@@ -20,5 +20,5 @@ data class Vertex(private val id: String,
         return id == o!!.id
     }
 
-    override fun toString(): String = name
+    override fun toString(): String = "Vertex($name, lat=$y, lon=$x)"
 }
