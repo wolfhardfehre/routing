@@ -1,4 +1,4 @@
-package gui.map
+package map.map
 
 import org.jxmapviewer.viewer.TileFactoryInfo
 

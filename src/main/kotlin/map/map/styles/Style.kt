@@ -1,7 +1,7 @@
-package gui.map.styles
+package map.map.styles
 
-import gui.map.painters.ALL
-import gui.map.painters.BLUE
+import map.map.painters.ALL
+import map.map.painters.BLUE
 import java.awt.Color
 
 

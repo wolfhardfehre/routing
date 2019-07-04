@@ -1,6 +1,6 @@
-package gui.map.painters
+package map.map.painters
 
-import gui.map.styles.Style
+import map.map.styles.Style
 import org.jxmapviewer.JXMapViewer
 import org.jxmapviewer.painter.Painter
 import org.jxmapviewer.viewer.GeoPosition

@@ -1,8 +1,8 @@
-package gui
+package map
 
-import gui.map.MapHandler
-import gui.map.MapView
-import gui.map.styles.MapStyle
+import map.map.MapHandler
+import map.map.MapView
+import map.map.styles.MapStyle
 import java.awt.BorderLayout
 import java.awt.GridLayout
 import javax.swing.JFrame

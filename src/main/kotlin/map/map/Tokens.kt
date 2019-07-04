@@ -1,4 +1,4 @@
-package gui.map
+package map.map
 
 import java.io.File
 

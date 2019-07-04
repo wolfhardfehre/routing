@@ -1,8 +1,8 @@
-package gui.map
+package map.map
 
-import gui.map.painters.Element
-import gui.map.styles.Style
-import gui.map.styles.Type
+import map.map.painters.Element
+import map.map.styles.Style
+import map.map.styles.Type
 import org.jxmapviewer.viewer.GeoPosition
 
 class MapHandler(private val mapView: MapView) {

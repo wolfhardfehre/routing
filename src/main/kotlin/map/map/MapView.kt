@@ -1,10 +1,10 @@
-package gui.map
+package map.map
 
-import gui.map.painters.DiminishingPoints
-import gui.map.painters.Element
-import gui.map.painters.Line
-import gui.map.painters.Points
-import gui.map.styles.MapStyle
+import map.map.painters.DiminishingPoints
+import map.map.painters.Element
+import map.map.painters.Line
+import map.map.painters.Points
+import map.map.styles.MapStyle
 import org.jxmapviewer.JXMapViewer
 import org.jxmapviewer.input.CenterMapListener
 import org.jxmapviewer.input.PanKeyListener
@@ -14,6 +14,7 @@ import org.jxmapviewer.painter.CompoundPainter
 import org.jxmapviewer.painter.Painter
 import org.jxmapviewer.viewer.DefaultTileFactory
 import org.jxmapviewer.viewer.GeoPosition
+import java.awt.geom.Rectangle2D
 import java.util.concurrent.LinkedBlockingQueue
 
 class MapView(token: String, mapStyle: MapStyle) : JXMapViewer() {
@@ -56,7 +57,6 @@ class MapView(token: String, mapStyle: MapStyle) : JXMapViewer() {
         listOf("POINT", "DIMINISH", "LINE").forEach {
             collection.remove("${name}_$it")
         }
-        //draw()
     }
 
     fun draw() {

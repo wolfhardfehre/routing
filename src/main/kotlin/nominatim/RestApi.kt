@@ -6,27 +6,23 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+private const val NOMINATIM_URL = "http://nominatim.openstreetmap.org"
+private const val FORMAT = "jsonv2"
+private const val LIMIT = 1
+
 class RestApi {
-
-    private val api: NominatimApi
-    private val format: String = "jsonv2"
-    private val limit = 1
-
-    init {
-        val retrofit = retrofit()
-        api = retrofit.create(NominatimApi::class.java)
-    }
+    private val api: NominatimApi = retrofit().create(NominatimApi::class.java)
 
     fun getPlace(city: String): List<Place> = runBlocking {
-                return@runBlocking api.search(city, format, limit)
+                return@runBlocking api.search(city, FORMAT, LIMIT)
             }
 
     fun getPlace(lat: Double, lon: Double): List<Place> = runBlocking {
-                return@runBlocking api.reverse(lat, lon, format)
+                return@runBlocking api.reverse(lat, lon, FORMAT)
             }
 
     private fun retrofit(): Retrofit = Retrofit.Builder()
-            .baseUrl("http://nominatim.openstreetmap.org")
+            .baseUrl(NOMINATIM_URL)
             .client(client())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

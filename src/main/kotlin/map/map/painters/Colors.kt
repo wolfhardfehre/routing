@@ -1,4 +1,4 @@
-package gui.map.painters
+package map.map.painters
 
 import java.awt.Color
 
